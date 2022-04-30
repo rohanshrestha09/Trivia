@@ -1,11 +1,11 @@
-const Count = (props) => {
+const Count = ({ pointsChange, index }) => {
   return (
     <div className="points">
       {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((element) =>
         element % 5 === 0 ? (
           <li
             style={{
-              color: props.index === element - 1 ? props.pointsChange : null,
+              color: index === element - 1 && pointsChange,
             }}
             key={element}
           >
@@ -15,7 +15,7 @@ const Count = (props) => {
         ) : (
           <li
             style={{
-              color: props.index === element - 1 ? props.pointsChange : null,
+              color: index === element - 1 && pointsChange,
             }}
             key={element}
           >

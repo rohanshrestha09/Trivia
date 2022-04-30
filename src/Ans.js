@@ -5,9 +5,14 @@ const Ans = ({
   styleChangeTrue,
   styleChangeFalse,
   colorUpdate,
+  pointer,
 }) => {
   return (
-    <div className="ansSection" onClick={colorUpdate}>
+    <div
+      className="ansSection"
+      onClick={colorUpdate}
+      style={{ pointerEvents: pointer }}
+    >
       {database[index].ans.map((element) => (
         <div
           key={element}
@@ -17,7 +22,7 @@ const Ans = ({
                 ? styleChangeTrue
                 : styleChangeFalse,
           }}
-          onClick={element === database[index].correction ? pointsUpdate : null}
+          onClick={element === database[index].correction && pointsUpdate}
         >
           {element}
         </div>

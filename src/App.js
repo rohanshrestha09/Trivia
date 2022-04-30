@@ -12,19 +12,26 @@ const App = () => {
   const [pts, setPts] = useState(0);
   const [styleChangeTrue, setStyleChangeTrue] = useState("initial");
   const [styleChangeFalse, setStyleChangeFalse] = useState("initial");
+  const [pointer, setPointer] = useState("initial");
   const pointsChange = "green";
 
-  const changeQuestion = () => {
-    setIndex(index + 1);
+  const colCg = () => {
     setStyleChangeTrue("initial");
     setStyleChangeFalse("initial");
   };
 
+  const changeQuestion = () => {
+    setIndex((val) => val + 1);
+    setPointer("initial");
+    colCg();
+  };
+
   const pointsUpdate = () => {
-    setPts(pts + 5);
+    setPts((val) => val + 5);
   };
 
   const colorUpdate = () => {
+    setPointer("none");
     setStyleChangeTrue("#6ECE53");
     setStyleChangeFalse("#F35F5D");
   };
@@ -32,6 +39,7 @@ const App = () => {
   const restart = () => {
     setIndex(0);
     setPts(0);
+    colCg();
   };
 
   return (
@@ -50,22 +58,19 @@ const App = () => {
             restart()
           )}{" "}
           <Question index={index} database={dbase} />
-          {index < 15 ? (
-            <Ans
-              index={index}
-              database={dbase}
-              pointsUpdate={pointsUpdate}
-              styleChangeTrue={styleChangeTrue}
-              styleChangeFalse={styleChangeFalse}
-              colorUpdate={colorUpdate}
-            />
-          ) : (
-            restart()
-          )}{" "}
+          <Ans
+            index={index}
+            database={dbase}
+            pointsUpdate={pointsUpdate}
+            styleChangeTrue={styleChangeTrue}
+            styleChangeFalse={styleChangeFalse}
+            colorUpdate={colorUpdate}
+            pointer={pointer}
+          />{" "}
         </div>{" "}
         <div className="col-lg-3">
           <Count pointsChange={pointsChange} index={index} />
-          <Solve colorUpdate={colorUpdate} />
+          <Solve colorUpdate={colorUpdate} setPointer={setPointer} />
         </div>
       </div>
     </div>
