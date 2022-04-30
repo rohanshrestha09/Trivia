@@ -109,13 +109,25 @@ navSection span:last-child {
 }
 
 @media screen and (max-width: 992px) {
+  body {
+    padding: 30px 10px;
+  }
+  .navSection {
+    width: 105%;
+  }
   .navSection div:first-child,
   .navSection div:last-child,
   .navSection div:nth-child(2),
   .navSection div:nth-child(3) {
-    font-size: x-large;
+    font-size: 17px;
+    width: auto;
     padding: 0 18px 0 0;
   }
+
+  .ansSection {
+    font-size: medium;
+  }
+
   .col-lg-3 {
     display: none;
   }
