@@ -114,6 +114,8 @@ navSection span:last-child {
   }
   .navSection {
     width: 105%;
+    padding-right:0;
+    padding-left:0;
   }
   .navSection div:first-child,
   .navSection div:last-child,
@@ -121,7 +123,7 @@ navSection span:last-child {
   .navSection div:nth-child(3) {
     font-size: 17px;
     width: auto;
-    padding: 0 18px 0 0;
+    padding: 0 16px 0 0;
   }
 
   .ansSection {

@@ -7,7 +7,7 @@ const Nav = (props) => {
         Restart
       </div>
       <div onClick={props.onclick} className="next">
-        Next
+        Next &#xbb;
       </div>
     </div>
   );
