@@ -22,7 +22,7 @@ const Ans = ({
                 ? styleChangeTrue
                 : styleChangeFalse,
           }}
-          onClick={element === database[index].correction && pointsUpdate}
+          onClick={element === database[index].correction ? pointsUpdate : null}
         >
           {element}
         </div>
